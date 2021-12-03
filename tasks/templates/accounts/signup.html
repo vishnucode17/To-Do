@@ -1,0 +1,32 @@
+{% extends "../base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}" type="text/css">
+<div class="signup_section">
+    <div class="signup_image">
+        <img src="{% static 'images/signup.jpg' %}" alt="signup" id="signup_img">
+    </div>
+    <form class="signup_form" method="post">
+        {% csrf_token %}
+        <h1 id="signup_heading">Sign Up</h1>
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        <div class="form_field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" name="username">
+        </div>
+        <div class="form_field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password">
+        </div>
+        <div class="form_field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Confirm Password" name="confirmPassword">
+        </div>
+        <a href="/login">Already have an account?</a>
+        <button id="signup_btn">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

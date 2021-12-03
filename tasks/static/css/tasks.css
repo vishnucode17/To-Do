@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.task_field{
+    display: flex;
+    align-items: center;
+}
+.task_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    justify-content:space-evenly;
+}

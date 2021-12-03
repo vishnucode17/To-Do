@@ -1,0 +1,11 @@
+{% extends "../base.html" %}
+{% block title %}View Task{% endblock %}
+{% block content %}
+{% load static %}
+<ul>
+    <li>{{t_name}}</li>
+    <li>{{t_id}}</li>
+    <li>{{time_stamp}}</li>
+    <li>{{t_desc}}</li>
+</ul>
+{% endblock %}

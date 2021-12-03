@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} To Do Tasks | Home {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+        <nav class="header_nav">
+            <ul>
+                <li class="nav_links nav_head"><a href="/">To Do work</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="/logout">Logout</a></li>
+                <li class="nav_links"><a href="/tasks/view_task">View Tasks</a></li>
+                <li class="nav_links"><a href="/tasks/addtask">Add Task</a></li>
+                {% else %}
+                <li class="nav_links"><a href="/signup">Signup</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% block content %}
+        {% endblock %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "../base.html" %}
+{% block title %}View Task{% endblock %}
+{% block content %}
+{% load static %}
+<h1>Your Tasks</h1>
+<ul>
+{% for task,t_id in result %}
+<li><a href="/tasks/view_task/{{t_id}}"><h3>{{task}}</h3></a></li>
+{% endfor %}
+</ul>
+{% endblock %}

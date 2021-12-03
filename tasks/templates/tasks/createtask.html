@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+{% block title %}Create Task{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/tasks.css' %}" type="text/css">
+<div class="add_task">
+    <form method="POST" class="task_form">
+        {% csrf_token %}
+        <h1>Add a task</h1>
+        <input type="text" value={{username}}>
+        <div class="task_field">
+            <i class="fas fa-tasks"></i>
+            <input type="text" placeholder="Task Title" name="task_title">
+        </div>
+        <div class="task_field">
+            <i class="fas fa-sticky-note"></i>
+            <textarea name="task_description" cols="30" rows="10"></textarea>
+        </div>
+        <!-- <div class="task_field">
+            <i class="far fa-image"></i>
+            <div>
+                <label for="add_img">Upload image</label>
+                <input type="file" id="add_img" name="task_img">
+            </div>
+        </div> -->
+        <button>Add Task</button>
+    </form>
+</div>
+{% endblock %}
